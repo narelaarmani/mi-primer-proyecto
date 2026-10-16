@@ -1,5 +1,3 @@
-# mi-primer-proyecto
-
 # Clase práctica 1 — Ingesta y capa Bronze
 
 ## Propósito
