@@ -42,7 +42,7 @@
 
 ## Datos y tracking
 
-**1.** train: 35,654 filas · test: 7,129 filas. Contracargos en test: 740 (10.4%).
+**1.** train: 35,654 filas · test: 7,129 filas · nuevas: 7,165 filas. Contracargos en test: 740 (10.4%).
 
 Se separa por fecha ya que se entrena al modelo con datos del pasado, y se quiere predecir el futuro. Si se separara al azar, el modelo vería datos de días que después usamos para evaluarlo, y las métricas darían mejor de lo que realmente funciona.
 
@@ -78,7 +78,7 @@ Autolog no registra:
 - El PR-AUC, que es nuestra métrica principal.
 - El umbral y la versión de los datos (`threshold`, `data_version`), que son parámetros propios del problema.
 
-**5.** Para que dos runs sean reproducibles, tienen que tener los mismos datos, mismo código, misma semilla y mismo entorno.
+**5.** Sí, `01_repro_a` y `01_repro_b` dieron las mismas métricas (PR-AUC 0.5099, recall 0.2068 y 212 alertas en los dos). Para que dos runs sean reproducibles, tienen que tener los mismos datos, mismo código, misma semilla y mismo entorno.
 
 **6.** La firma sirve para declarar las columnas y tipos que espera el modelo y qué devuelve. Gracias a ella, si le pasan datos que no cumplen (como sin `amount`), MLflow lo frena antes de predecir.
 
